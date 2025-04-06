@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# VS Code settings
+.vscode/
+
+# macOS / Linux system files
+.DS_Store
+*.swp
+*.swo
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Test output
+*.out
+*.tmp
+
+# Matplotlib/Seaborn cache
+.matplotlib/
+
+# Cache
+.cache/
+__pypackages__/
+
+# Data or output (optional)
+data/
+output/
