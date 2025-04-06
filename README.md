@@ -209,7 +209,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Special thanks to all contributors who help improve this educational resource
 - Dataset sources: UCI Machine Learning Repository and Kaggle
 
-Contact Us
+## Contact Us:
 Tejinder Singh Hunjan: tejindersingh0784@gmail.com
+
 Mohit Kamkhalia: mohitkamkhalia@gmail.com
 
