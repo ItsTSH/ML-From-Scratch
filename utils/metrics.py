@@ -136,8 +136,6 @@ def gini_impurity(y):
     probs = counts / counts.sum()
     return 1 - np.sum(probs ** 2)
 
-import numpy as np
-
 def roc_auc_score(y_true, y_scores, num_thresholds=100):
     """
     Compute the ROC AUC score from scratch.
@@ -182,5 +180,5 @@ def roc_auc_score(y_true, y_scores, num_thresholds=100):
     tpr_sorted = np.array(tpr_list)[fpr_sorted_idx]
 
     # Trapezoidal rule to compute AUC
-    auc = np.trapz(tpr_sorted, fpr_sorted)
+    auc = np.trapezoid(tpr_sorted, fpr_sorted)
     return auc
