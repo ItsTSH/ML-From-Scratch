@@ -1,24 +1,90 @@
 import numpy as np
 
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
+def sigmoid(z):
+    """
+    Sigmoid activation function: f(z) = 1 / (1 + exp(-z))
+    Clips values to avoid overflow.
+    
+    Parameters:
+    -----------
+    z : array-like
+        Input values
+        
+    Returns:
+    --------
+    array-like
+        Sigmoid output, same shape as input
+    """
+    # Clip values to avoid overflow
+    z = np.clip(z, -500, 500)
+    return 1 / (1 + np.exp(-z))
 
-def sigmoid_derivative(x):
-    s = sigmoid(x)
-    return s * (1 - s)
+def relu(z):
+    """
+    ReLU activation function: f(z) = max(0, z)
+    
+    Parameters:
+    -----------
+    z : array-like
+        Input values
+        
+    Returns:
+    --------
+    array-like
+        ReLU output, same shape as input
+    """
+    return np.maximum(0, z)
 
-def relu(x):
-    return np.maximum(0, x)
+def tanh(z):
+    """
+    Hyperbolic tangent activation function: f(z) = tanh(z)
+    
+    Parameters:
+    -----------
+    z : array-like
+        Input values
+        
+    Returns:
+    --------
+    array-like
+        Tanh output, same shape as input
+    """
+    return np.tanh(z)
 
-def relu_derivative(x):
-    return (x > 0).astype(float)
+def softmax(z):
+    """
+    Softmax activation function: f(z_i) = exp(z_i) / sum(exp(z_j))
+    Handles numeric stability by subtracting max value.
+    
+    Parameters:
+    -----------
+    z : array-like
+        Input values, typically logits
+        
+    Returns:
+    --------
+    array-like
+        Softmax probabilities, same shape as input
+    """
+    # Shift values for numerical stability (prevent overflow) 
+    shifted_z = z - np.max(z, axis=1, keepdims=True)
+    exp_z = np.exp(shifted_z)
+    return exp_z / np.sum(exp_z, axis=1, keepdims=True)
 
-def tanh(x):
-    return np.tanh(x)
-
-def tanh_derivative(x):
-    return 1 - np.tanh(x) ** 2
-
-def softmax(x):
-    e_x = np.exp(x - np.max(x, axis=1, keepdims=True))
-    return e_x / np.sum(e_x, axis=1, keepdims=True)
+def leaky_relu(z, alpha=0.01):
+    """
+    Leaky ReLU activation: f(z) = max(alpha*z, z)
+    
+    Parameters:
+    -----------
+    z : array-like
+        Input values
+    alpha : float, default=0.01
+        Slope for negative values
+        
+    Returns:
+    --------
+    array-like
+        Leaky ReLU output, same shape as input
+    """
+    return np.maximum(alpha * z, z)

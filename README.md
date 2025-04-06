@@ -22,13 +22,8 @@ A comprehensive implementation of machine learning algorithms from scratch using
 | Linear Regression | Simple and multiple linear regression with gradient descent | ✅ |
 | Logistic Regression | Binary and multi-class classification | ✅ |
 | Decision Tree | Classification and regression trees | ✅ |
-| Naive Bayes | Gaussian, Multinomial and Bernoulli variants | ✅ |
-| k-Nearest Neighbors | Classification and regression with various distance metrics | ✅ |
-| Support Vector Machine | Linear and non-linear kernels | ✅ |
-| k-Means Clustering | Unsupervised clustering algorithm | ✅ |
-| Principal Component Analysis | Dimensionality reduction | ✅ |
-| Artificial Neural Network | Multi-layer perceptron with backpropagation | ✅ |
-| LSTM | Long Short-Term Memory networks | ✅ |
+
+And more models in the future...
 
 ## 🔧 Installation
 
@@ -53,6 +48,25 @@ set PYTHONPATH=%PYTHONPATH%;%cd%
 $env:PYTHONPATH += ";$pwd"
 ```
 
+## Additional Installation:
+Graphviz (for the decision tree experiment, you can skip this if you dont intend to use the experiment file):
+🔧 Step 1: Install Graphviz (Windows)
+
+1. Go to https://graphviz.org/download/
+2. Under Windows, click the Stable Release Windows installer (e.g., graphviz-xxx.exe)
+3. Install it with default settings 
+
+🔧 Step 2: Add Graphviz to System PATH
+
+After installation:
+
+1. Go to: C:\Program Files\Graphviz\bin
+2. Copy this path
+3. Open System Environment Variables → Environment Variables
+4. Under System variables, find and select Path, click Edit
+5. Click New and paste: C:\Program Files\Graphviz\bin
+6. Click OK and apply the changes
+
 ### Setting up PYTHONPATH permanently
 
 For permanent setup, add the PYTHONPATH to your environment variables:
@@ -76,7 +90,7 @@ export PYTHONPATH=$PYTHONPATH:/path/to/ml-from-scratch
 
 ```python
 import numpy as np
-from models.linear_regression import LinearRegression
+from models.linearRegression import LinearRegression
 
 # Create and train a linear regression model
 model = LinearRegression(learning_rate=0.01, iterations=1000)
@@ -119,8 +133,7 @@ ml-from-scratch/
 ├── experiments/                # Scripts to run experiments
 ├── visualizations/             # Generated plots and graphs
 ├── README.md
-├── requirements.txt
-└── main.py
+└── requirements.txt
 ```
 
 ## 🔬 Examples
@@ -178,7 +191,6 @@ Performance comparison with scikit-learn implementations (on a MacBook Pro M1, 1
 | Linear Regression | 0.85s | 0.12s | 7.1x |
 | Logistic Regression | 1.23s | 0.18s | 6.8x |
 | Decision Tree | 4.56s | 0.31s | 14.7x |
-| k-NN | 0.92s | 0.14s | 6.6x |
 
 While our implementations are slower (as expected), they prioritize clarity and educational value over performance optimization.
 

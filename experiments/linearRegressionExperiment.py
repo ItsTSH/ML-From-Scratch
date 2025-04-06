@@ -11,7 +11,7 @@ from models.linearRegression import LinearRegression
 
 # Dataset
 X, y = make_regression(n_samples=200, n_features=1, noise=15, random_state=1)
-X = normalize(X)  # Optional normalization
+#X = normalize(X)  # Optional normalization
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # Model
