@@ -133,7 +133,8 @@ ml-from-scratch/
 ├── tests/                      # Unit tests
 ├── experiments/                # Scripts to run experiments
 ├── visualizations/             # Generated plots and graphs
-├── README.md
+├── reports/                    # LaTeX reports of models
+├── README.md                   
 └── requirements.txt
 ```
 
